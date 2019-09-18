@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+class node
+{
+    public:
+    int data;
+    node* next;
+};
+node* top;
+void push(int x)
+{
+    node* temp=new node();
+    if(top==NULL)
+    {
+        temp->data=x;
+        temp->next=NULL;
+        top=temp;
+    }
+    else
+    {
+        temp->data=x;
+        temp->next=top;
+        top=temp;
+    }
+}
+void pop()
+{
+    node* temp1=top;
+    top=temp1->next;
+    delete temp1;
+}
+void Top()
+{
+    cout<<top->data;
+}
+void print()
+{
+    node* temp1=top;
+    while(temp1!=NULL)
+    {
+        cout<<temp1->data;
+        temp1=temp1->next;
+    }
+    cout<<endl;
+
+}
+int main(void)
+{
+    top=NULL;
+    push(2);
+    push(4);
+    push(5);
+    push(8);
+    print();
+    pop();
+    print();
+}
