@@ -27,13 +27,13 @@ long long int solve(vector<int> &C,long long int s,long long int e,int A){
 }
 int Solution::paint(int A, int B, vector<int> &C) {
     long long int len = C.size();
-    if(A >= len) {
+    /*if(A >= len) {
         long long int res = -1;
         for(int i = 0; i < len; i++) {
             if(res < C[i]) res = C[i];
         }
         return (B*res)%10000003;
-    }
+    }*/
     long long int sum = 0;
     ans = 0;
     for(int i = 0; i < len; i++) {
